@@ -1,6 +1,14 @@
 .pie{
     border: 1px solid silver;
+    margin: 0;
+    padding: 0;
 }
+
 #pie-1{
-    width: 300px;
+    max-width: 600px;
+    /*min-height: 6000px;*/
+    /*box-sizing: border-box;*/
+}
+#pie-2{
+    max-width: 30px;
 }

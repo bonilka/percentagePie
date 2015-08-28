@@ -7,26 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="pie-0" class="pie" width="300" height="200"></canvas>
+    <!-- <canvas id="pie-0" class="pie" width="300" height="200"></canvas> -->
     <div id="pie-1" class="pie"></div>
+    <!-- <div class="pie" id="pie-2"></div> -->
     <!-- SCRIPTS -->
+    <script>
+    var el = document.getElementById('pie-1');
+    var child = document.createElement('canvas');
+    var h = el.clientWidth;
+    child.setAttribute('height', h);
+    child.setAttribute('width', h);
+    child.style.display = 'block';
+    console.log('before: '+el.clientWidth);
+    // el.appendChild(child)
+    console.log('after: '+ el.clientWidth);
+
+    </script>
     <script src="main.js"></script>
     <script>
-    var example = document.getElementById("pie-0"),
-          ctx     = example.getContext('2d');
-      example.height = 200;
-      example.width  = 300;
-      ctx.beginPath();
-      ctx.arc(80, 100, 56, 3/4 * Math.PI, 1/4 * Math.PI, true);
-      ctx.fill(); // *14
-      ctx.moveTo(40, 140);
-      ctx.lineTo(20, 40);
-      ctx.lineTo(60, 100);
-      ctx.lineTo(80, 20);
-      ctx.lineTo(100, 100);
-      ctx.lineTo(140, 40);
-      ctx.lineTo(120, 140);
-      ctx.stroke(); // *22
+        // var pie2 = new Pie({
+        //     value:55,
+        //     id: 'pie-2',
+        //     // borderWidth: 30,
+        //     text: true,
+        //     borderColor: 'rgb(244, 57, 16)'
+        // });
     </script>
 </body>
 </html>
