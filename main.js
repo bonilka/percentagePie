@@ -1,12 +1,18 @@
 console.log("include main.js")
 // window.onload = function() {
-    var Canva = function (el) {
-        var canvas = el;
+    var Canva = function (data) {
+        var canvas = data.el;
+        this.prec = data['value'];
+        this.borderColor = data['borderColor'] || 'rgb(41, 180, 194)';
+        this.borderWidth = data['borderWidth'] || '20';
+        this.backgroundColor = data['backgroundColor'] || 'transparent';
+        this.textColor = data['textColor'] || '#000';
         this.context = canvas.getContext("2d");
     }
     Canva.prototype.arc = function (center, radius, start, end, counterClockwise, borderWidth, color) {
         //рисуем дугу
         this.context.beginPath();
+        this.context.strokeStyle = this.borderColor;
         this.context.lineWidth = borderWidth;
         this.context.arc(center.x, center.y, radius, start, end, counterClockwise);
         this.context.stroke();
@@ -15,33 +21,30 @@ console.log("include main.js")
     Canva.prototype.round = function (center, radius, color) {
         // рисуем круг
         this.context.beginPath();
-
         this.context.arc(center.x, center.y, radius, 0, 2*Math.PI, false);
-        this.context.fillStyle = '#c0c0c0';
+        this.context.fillStyle = this.backgroundColor;
         this.context.fill();
     };
     Canva.prototype.text = function (data) {
         this.context.textBaseline = "middle";
+        this.context.textAlign = "center";
         if(data.font){
             this.context.font = data.font;
+        }else{
+            this.context.font = 'normal 1em Helvetica, Arial, sans-serif'
         };
-        if (data.color) {
-            fillStyle = data.color;
-        }
-        this.context.fillText(data.text, 150, 150);
+        this.context.fillStyle = this.textColor;
+        this.context.fillText(data.text, data.center.x, data.center.y);
     };
     // var canva = new Canva(document.getElementById('pie-0'));
     // canva.arc();
     var Pie = function (data) {
         this.parentEl = document.getElementById(data['id']);
-        this.prec = data['value'];
-        this.borderColor = data['borderColor'] || '#000';
-        this.borderWidth = data['borderWidth'] || '20'
-        this.textColor = data['textColor'] || '#000';
         this.createEl();
         this.calcCenter();
         console.log(this.el);
-        Canva.call(this, this.el);
+        data.el = this.el; //добавлям элемент в объект настроек
+        Canva.call(this, data);
         this.print();
     }
     Pie.prototype = Object.create(Canva.prototype);
@@ -80,9 +83,9 @@ console.log("include main.js")
     Pie.prototype.print = function () {
         this.arc(this.center,  this.h/2-this.borderWidth/2, 1.5*Math.PI, this.calcArcRad(), false, this.borderWidth);
         this.round(this.center,  this.h/2-this.borderWidth);
-        this.text({text: this.prec+'%', color: this.textColor});
+        this.text({text: this.prec+'%', center: this.center});
     };
-    var pie = new Pie({'id':'pie-1', 'value': 99, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0', 'borderColor': '#a0ffff', 'innerColor': '#0429ff', 'backgroundColor': ''})
+    var pie = new Pie({'id':'pie-1', 'value': 99, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0',  'innerColor': '#0429ff', 'backgroundColor': ''})
     // {'id':'pie-1', 'value': 35, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0', 'borderColor': '#a0ffff', 'innerColor': '#0429ff', 'backgroundColor'}
     // pie.setHeight();
     // pie.getCenter()
