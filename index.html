@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Procentage Pie</title>
     <!-- STYLES -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- <canvas id="pie-0" class="pie" width="300" height="200"></canvas> -->
     <div id="pie-1" class="pie"></div>
-    <!-- <div class="pie" id="pie-2"></div> -->
     <div id="pie-3" class="pie"></div>
     <!-- SCRIPTS -->
-    <script>
-    var el = document.getElementById('pie-1');
-    var child = document.createElement('canvas');
-    var h = el.clientWidth;
-    child.setAttribute('height', h);
-    child.setAttribute('width', h);
-    child.style.display = 'block';
-    console.log('before: '+el.clientWidth);
-    // el.appendChild(child)
-    console.log('after: '+ el.clientWidth);
-
-    </script>
     <script src="main.js"></script>
     <script>
-        // var pie2 = new Pie({
-        //     value:55,
-        //     id: 'pie-2',
-        //     // borderWidth: 30,
-        //     text: true,
-        //     borderColor: 'rgb(244, 57, 16)'
-        // });
-
-        var pie = new Pie({'id':'pie-1', 'value': 99, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0',  'backgroundColor': '', 'borderColor': 'tomato', text: 'true'})
-        var pie2 = new Pie({id: 'pie-3', value: 55,'borderWidth': '5', text: true})
-        // {'id':'pie-1', 'value': 35, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0', 'borderColor': '#a0ffff', 'innerColor': '#0429ff', 'backgroundColor'}
-
+        var pie = new Pie({
+            'id': 'pie-1',
+            'value': 99,
+            'font': 'bold 10px sans-serif',
+            'borderWidth': '20',
+            'textColor': '#c0c0c0',
+            'backgroundColor': '',
+            'borderColor': 'tomato',
+            text: 'true'
+        })
+        var pie2 = new Pie({
+                id: 'pie-3',
+                value: 55,
+                'borderWidth': '5',
+                text: true
+            })
     </script>
 </body>
+
 </html>

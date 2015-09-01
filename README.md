@@ -1,11 +1,13 @@
-# percentagePie.js
-percentagePie.js is small plugin for presentation of interes data.
+# PercentagePie.js
 
+PercentagePie.js is small plugin for presentation of interes data.
+
+# [Demo](http://bonilka.github.io/precentagepie.html)
 # Basic Usage
 1. Include the Javascript file in your html.
-```
-<script type="text/javascript" src="iconate.min.js">
-```
+    ```
+    <script type="text/javascript" src="iconate.min.js">
+    ```
 2. Create `div` element.
     ```
     <div id="pie-1"></div>
@@ -22,14 +24,15 @@ percentagePie.js is small plugin for presentation of interes data.
     'id':'pie-1', //id of dom element
    'value': 35, //interes value (35%)
     'font': 'normal 1em Helvetica, Arial, sans-serif', //font setting for text in the pie
-    'borderWidth': '20', //thickness of border
+    'borderWidth': '20', //thickness of border (px)
     'textColor': '#c0c0c0', //text color in the pie
     'borderColor': '#a0ffff', //border color
     'innerColor': '#0429ff', // background color inner the pie
-    'backgroundColor': '#c0c0c0' //background color of canvas
+    'backgroundColor': '#c0c0c0', //background color of canvas
+    'text': true // print interes value in the pie
 }
   ```
-# a bit more
+# A bit more
 * Height of the pie calculate  based on the width of the div.
 * Plugin append canvas element to div#id.
 * PrecentagePie creates responsive circles.
