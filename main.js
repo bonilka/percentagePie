@@ -100,7 +100,7 @@ console.log("include main.js")
             this.printText({text: this.prec+'%', center: this.center});
         }
     };
-    var pie = new Pie({'id':'pie-1', 'value': 89, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0',  'innerColor': '', 'text': 'true'});
+    // var pie = new Pie({'id':'pie-1', 'value': 89, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0',  'innerColor': '', 'text': 'true'});
     // {'id':'pie-1', 'value': 35, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0', 'borderColor': '#a0ffff', 'innerColor': '#0429ff', 'backgroundColor'}
 
 // };

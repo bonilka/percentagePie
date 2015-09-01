@@ -12,3 +12,7 @@
 #pie-2{
     max-width: 30px;
 }
+#pie-3{
+    display: inline-block;
+    width: 50px;
+}

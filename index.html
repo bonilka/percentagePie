@@ -10,6 +10,7 @@
     <!-- <canvas id="pie-0" class="pie" width="300" height="200"></canvas> -->
     <div id="pie-1" class="pie"></div>
     <!-- <div class="pie" id="pie-2"></div> -->
+    <div id="pie-3" class="pie"></div>
     <!-- SCRIPTS -->
     <script>
     var el = document.getElementById('pie-1');
@@ -32,6 +33,11 @@
         //     text: true,
         //     borderColor: 'rgb(244, 57, 16)'
         // });
+
+        var pie = new Pie({'id':'pie-1', 'value': 99, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0',  'backgroundColor': '', 'borderColor': 'tomato', text: 'true'})
+        var pie2 = new Pie({id: 'pie-3', value: 55,'borderWidth': '5'})
+        // {'id':'pie-1', 'value': 35, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0', 'borderColor': '#a0ffff', 'innerColor': '#0429ff', 'backgroundColor'}
+
     </script>
 </body>
 </html>
