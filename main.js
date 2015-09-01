@@ -85,28 +85,4 @@ console.log("include main.js")
         this.round(this.center,  this.h/2-this.borderWidth);
         this.text({text: this.prec+'%', center: this.center});
     };
-    var pie = new Pie({'id':'pie-1', 'value': 99, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0',  'innerColor': '#0429ff', 'backgroundColor': ''})
-    // {'id':'pie-1', 'value': 35, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0', 'borderColor': '#a0ffff', 'innerColor': '#0429ff', 'backgroundColor'}
-    // pie.setHeight();
-    // pie.getCenter()
-    // console.dir(pie);
-
-    // var PI = Math.PI
-    // var canvas = document.getElementById("pie");
-    // if (canvas.getContext){
-    //     var context = canvas.getContext("2d");
-    //
-    //     context.beginPath();
-    //     // context.moveTo(150, 100);
-    //     // context.lineTo(250, 50);
-    //     context.lineWidth = 10;
-    //     context.strokeStyle = "#aa0000";
-    //     context.arc(150, 100, 50, 1.5*PI, 2*PI, false);
-    //     // context.lineCap = "round";
-    //     context.stroke();
-    // }
-    // else {
-    //     alert('Canvas not supported')
-    // }
-
-// };
+    

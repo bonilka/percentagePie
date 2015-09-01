@@ -9,24 +9,14 @@
 <body>
     <canvas id="pie-0" class="pie" width="300" height="200"></canvas>
     <div id="pie-1" class="pie"></div>
+    <div id="pie-3" class="pie"></div>
     <!-- SCRIPTS -->
     <script src="main.js"></script>
     <script>
-    var example = document.getElementById("pie-0"),
-          ctx     = example.getContext('2d');
-      example.height = 200;
-      example.width  = 300;
-      ctx.beginPath();
-      ctx.arc(80, 100, 56, 3/4 * Math.PI, 1/4 * Math.PI, true);
-      ctx.fill(); // *14
-      ctx.moveTo(40, 140);
-      ctx.lineTo(20, 40);
-      ctx.lineTo(60, 100);
-      ctx.lineTo(80, 20);
-      ctx.lineTo(100, 100);
-      ctx.lineTo(140, 40);
-      ctx.lineTo(120, 140);
-      ctx.stroke(); // *22
+        var pie = new Pie({'id':'pie-1', 'value': 99, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0',  'innerColor': '#0429ff', 'backgroundColor': '', 'borderColor': '#000'})
+        var pie2 = new Pie({id: 'pie-3', value: 55,'borderWidth': '5'}) 
+        // {'id':'pie-1', 'value': 35, 'font': '', 'borderWidth': '20', 'textColor': '#c0c0c0', 'borderColor': '#a0ffff', 'innerColor': '#0429ff', 'backgroundColor'}
+
     </script>
 </body>
 </html>
